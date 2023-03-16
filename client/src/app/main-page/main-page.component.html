@@ -1,0 +1,18 @@
+<div>
+  <div class="main_field">
+    <div id="wrapper" >
+      <div id="form_table" class="main_field">
+        <h2 class="text">Система координат с областью</h2>
+        <app-canvas [_coordinates]="coordinatesArray"  (sendEventSubmit)="catchEventCanvasSubmit($event)" class="app_block" ></app-canvas>
+      </div>
+      <div id="main" class="main_field" >
+        <h2 class="center">Ввод данных</h2>
+        <app-coordinates-form (sendEventSubmit)="catchEventSubmit($event)" (sendEventNewR)="changeRValue($event)" class="app_block"></app-coordinates-form>
+      </div>
+    </div>
+  </div>
+  <div id="footer" class="main_field">
+    <h2 class="text">Таблица результатов</h2>
+    <app-coordinates-list></app-coordinates-list>
+  </div>
+</div>

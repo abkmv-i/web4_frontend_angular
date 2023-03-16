@@ -1,0 +1,27 @@
+<div id="wrapper">
+  <div id="transition" class="main_field">
+    <div class="center" style="margin-bottom: 10px ">
+      <div class="registration">
+      <form #logInForm="ngForm" (ngSubmit)="onSubmit(logInForm)">
+        <p class="text">Авторизация</p>
+        <p for="username">Логин:</p>
+        <input type="text" id="username" required #username="ngModel" name="username" ngModel class="main_font">
+        <div [hidden]="username.valid || username.untouched"> Поле логина обязательно для заполнения </div>
+        <br [hidden]="username.invalid && username.touched">
+        <p for="password">Пароль:</p>
+        <input type="password" id="password" autocomplete="on" required #password="ngModel" name="password" ngModel class="main_font" >
+        <div [hidden]="password.valid || password.untouched"> Поле пароля обязательно для заполнения </div>
+        <br [hidden]="password.invalid && password.touched" >
+        <div>
+          <div *ngIf="isLogInFail"> {{errorMessage}} </div>
+        </div>
+        <nav>
+          <button style="margin-top: 20px" type="submit" class="but" [disabled]="username.invalid || password.invalid">Войти</button>
+          <br>
+          <a href="#" [routerLink]="['/reg']">Нет аккаунта? Пройдите регистрацию</a>
+        <!--  <button class="main_font" routerLink="/reg">Зарегистрироваться</button>-->
+        </nav>
+      </form>
+    </div>
+  </div>
+</div>

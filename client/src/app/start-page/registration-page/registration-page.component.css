@@ -1,0 +1,65 @@
+input.ng-touched.ng-invalid {border:solid red 2px;}
+input.ng-touched.ng-valid {border:solid green 2px;}
+#button_top{
+  margin-top: 20px
+}
+.text {
+  color: #4682b4; /* Цвет текста*/
+  border-radius: 10px;
+  font-size: 30px;
+  text-align: center;
+}
+button {
+  border: 1px solid #4682b4; /* Параметры рамки */
+  background: #4682b4;
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 4px 2px #b0c4de;
+  font-size: 25px;
+  align-self: center;
+}
+
+input {
+  border: 1px solid #4682b4; /* Параметры рамки */
+  border-radius: 20px;
+  box-shadow: 0 0 4px 3px #b0c4de;
+  font-size: 15px;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.registration {
+  padding: 50px 0;
+  align-items: center;
+}
+
+.registration form {
+  max-width: 300px;
+  padding: 50px 70px;
+  border-radius: 10px;
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  align-self: center;
+  display: block;
+  margin: auto;
+}
+.button-wrapper {
+  margin-bottom: 5px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.button-wrapper button {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+@media (max-width: 300px) {
+  .registration form {
+    padding: 50px 20px;
+  }
+}

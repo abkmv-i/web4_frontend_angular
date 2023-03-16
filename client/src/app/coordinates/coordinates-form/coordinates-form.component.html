@@ -1,0 +1,68 @@
+<div class="center">
+  <h4 style="margin: auto auto 10px;">Пользователь {{username}}, введите данные:</h4>
+</div>
+<form style="flex: auto; height: auto;" #coordinateForm="ngForm" (ngSubmit)="  onSubmit(coordinateForm)"
+      xmlns="http://www.w3.org/1999/html">
+  <div class="form_wrapper">
+    <div class="field_wrapper">
+      <label for="xValue">Выберите значение X</label>
+      <br/>
+      <br/>
+    </div>
+
+    <div class="field-checkbox" *ngFor="let xValue of xAvailableValues">
+      <p-checkbox name="x" [value]="xValue" [(ngModel)]="x" [inputId]="'x' + xValue"></p-checkbox>
+      <label [for]="'x' + xValue">{{ xValue }}</label>
+    </div>
+
+    <div class="field_wrapper">
+      <span>Выбрано:</span>
+      <br>
+      <h5 class="selected_value" id="xValue">{{coordinateForm.form.get('x')?.value}}</h5>
+    </div>
+  </div>
+  <div class="input_values">
+    <label for="yValue">Выберите значение Y</label>
+    <br/>
+    <br/>
+    <mat-slider min="-5" max="5" step="1" value="2" discrete showTickMarks
+    >
+      <input matSliderThumb name="y"
+             class="y"
+             id="yValue"
+             [(ngModel)]="y"/>
+    </mat-slider>
+    <br>
+    <span>Выбрано:</span>
+    <h5 class="selected_value" id="yValue">{{coordinateForm.form.get('y')?.value}}</h5>
+  </div>
+  <div class="form_wrapper">
+    <label for="yValue">Выберите значение R</label>
+
+    <div class="p-field p-col-12 p-md-4">
+      <p-knob
+        [size]="130"
+        [strokeWidth]="9"
+        valueColor="#4682b4"
+        rangeColor="#87CEEB"
+        [min]="-5"
+        [max]="5"
+        [step]="1"
+        name="r"
+        class="r"
+        id="rValue"
+        (click)="knobClickAndChangeValue($event,'.r', coordinateForm)"
+        [(ngModel)]="r"
+      >
+      </p-knob>
+    </div>
+  </div>
+  <nav style="margin-top: 20px">
+    <div class="center">
+      <button type="submit" value="Проверить" [disabled]="coordinateForm.invalid">Проверить</button>
+    </div>
+    <div class="center" id="back_button">
+      <button value="Вернуться" (click)="logOut()">Закончить сессию</button>
+    </div>
+  </nav>
+</form>

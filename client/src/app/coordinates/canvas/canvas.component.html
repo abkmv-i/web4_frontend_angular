@@ -1,0 +1,8 @@
+<div>
+  <canvas #canvasElement class="canvas" id="canvas" style="margin-bottom: 10px" width="300" height="300"
+          (click)="clickCanvasEvent($event)">
+  </canvas>
+  <div style="text-align: center; color: red">
+    <span *ngIf="!_rValue && (_rValue != 0)" >Значение R не выбрано</span>
+  </div>
+</div>

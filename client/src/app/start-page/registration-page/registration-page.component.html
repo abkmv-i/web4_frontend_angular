@@ -1,0 +1,36 @@
+<div id="wrapper">
+  <div id="transition" class="main_field">
+    <div class="center" style="margin-bottom: 10px ">
+      <div class="registration">
+        <form #regForm="ngForm" (ngSubmit)="onSubmit(regForm)">
+          <p class="text">Регистрация</p>
+          <p for="username">Логин:</p>
+          <input type="text" id="username" required name="username" ngModel #username="ngModel" style="margin: auto"
+                 class="main_font">
+          <div [hidden]="username.valid || username.untouched"> Поле логина обязательно для заполнения</div>
+          <br [hidden]="username.invalid && username.touched">
+          <p for="password">Пароль:</p>
+          <input type="password" id="password" autocomplete="on" required name="password" ngModel #password="ngModel"
+                 class="main_font">
+          <div [hidden]="password.valid || password.untouched"> Поле пароля обязательно для заполнения</div>
+          <br [hidden]="password.invalid && password.touched">
+          <label for="password_rep">Повторите пароль:</label>
+          <input type="password" id="password_rep" autocomplete="on" required name="repeatPassword" ngModel
+                 #repeatPassword="ngModel" class="main_font">
+          <div [hidden]="repeatPassword.valid || repeatPassword.untouched"> Поле пароля обязательно для заполнения</div>
+          <div>
+            <div *ngIf="isRegError"> {{errorMessage}} </div>
+            <div [hidden]="password.value == repeatPassword.value"> Пароли не совпадают</div>
+          </div>
+          <nav>
+            <button class="main_font" id="button_top" [disabled]="username.invalid
+          || password.invalid || repeatPassword.invalid || (password.value != repeatPassword.value)">Зарегистрироваться
+            </button>
+            <br>
+            <a href="#" [routerLink]="['/index']">Есть аккаунт? Войдите в систему!</a>
+          </nav>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

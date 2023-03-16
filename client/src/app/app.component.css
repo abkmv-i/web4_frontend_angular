@@ -1,0 +1,20 @@
+.text {
+  color: #4682b4; /* Цвет текста*/
+  border-radius: 10px;
+  font-size: 30px;
+  text-align: center;
+}
+
+table {
+  color: #4682b4;
+  border: 1px double #4682b4;
+  padding: 2px;
+  text-align: center;
+  width: 100%;
+}
+th, td {
+  font-size: 15px;
+  text-align: center;
+}
+
+

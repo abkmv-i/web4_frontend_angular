@@ -1,0 +1,16 @@
+<table style="margin-bottom: 10px" id="result_table" rules="all">
+  <thead>
+  <th scope="col">Значение X</th>
+  <th scope="col">Значение Y</th>
+  <th scope="col">Значение R</th>
+  <th scope="col">Результат</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let coordinate of coordinates">
+      <td>{{ coordinate.x }}</td>
+      <td>{{ coordinate.y }}</td>
+      <td>{{ coordinate.r }}</td>
+      <td>{{ coordinate.result }}</td>
+    </tr>
+  </tbody>
+</table>
